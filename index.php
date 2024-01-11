@@ -16,10 +16,8 @@
 		$id = (int)$_GET['id'];
 	}
 
-	if($c == 'calc'){
-		include_once(DIR_ROOT.'controllers/calc.php');
-	} elseif ($c == 'auth') {
-		include_once(DIR_ROOT.'controllers/auth.php');
+	if (file_exists(DIR_ROOT.'controllers/'. $c .'.php')) {
+		include_once(DIR_ROOT.'controllers/'. $c .'.php');
 	} else {
 		include_once(DIR_ROOT.'controllers/404.php');
 	}
